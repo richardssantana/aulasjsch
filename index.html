@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 JS</title>
+</head>
+<body>
+    <script>
+
+const numero1 = prompt("Digite seu ano de nascimento:");
+const numero2 = prompt("Digite o ano atual");
+
+
+const sub = Number(numero2) - Number(numero1);
+
+
+console.log("A soma dos dois números é: " + sub);
+
+if (sub < 18) {
+    alert("Você não pode acessar o site, por ser menor de idade.");
+} else {
+    const nome = prompt("Qual o seu nome?");
+    const sobrenome = prompt("Qual o seu sobrenome?");
+    alert("Seja bem-vindo(a) " + nome + " " + sobrenome);
+}
+    </script>
+</body>
+</html>
