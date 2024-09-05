@@ -7,40 +7,21 @@
 </head>
 <body>
     <script>
+        let soma = 0;
+let count = 0;
+let valor;
 
-function obterPrecoDeCusto() {
-    let precoDeCusto = parseFloat(prompt("Insira o preço de custo do produto:"));
-    if (isNaN(precoDeCusto) || precoDeCusto <= 0) {
-        alert("Por favor, insira um valor válido para o preço de custo.");
-        return obterPrecoDeCusto();
-    } else {
-        return precoDeCusto;
-    }
+while (true) {
+    valor = prompt("Insira um valor (ou 'sair' para encerrar):");
+    
+    if (valor === "sair") break;
+    
+    soma += parseFloat(valor);
+    count++;
+    
+    console.log(`Soma atual: ${soma}`);
+    console.log(`Média atual: ${(soma / count).toFixed(2)}`);
 }
-
-function calcularPrecoComICMS(precoDeCusto) {
-    let percentualICMS = parseFloat(prompt("Insira o percentual de ICMS (%):"));
-    if (isNaN(percentualICMS) || percentualICMS < 0) {
-        alert("Por favor, insira um percentual de ICMS válido.");
-        return calcularPrecoComICMS(precoDeCusto);
-    } else {
-        let valorICMS = precoDeCusto * (percentualICMS / 100);
-        return precoDeCusto + valorICMS;
-    }
-}
-
-function mostrarPrecoCalculado(precoFinal) {
-    alert(`O preço do produto com ICMS é: R$ ${precoFinal.toFixed(2)}`);
-}
-
-function calcularICMS() {
-    let precoDeCusto = obterPrecoDeCusto();
-    let precoFinal = calcularPrecoComICMS(precoDeCusto);
-    mostrarPrecoCalculado(precoFinal);
-}
-
-calcularICMS();
-
     </script>
 </body>
 </html>
