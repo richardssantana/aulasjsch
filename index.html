@@ -7,21 +7,24 @@
 </head>
 <body>
     <script>
-        let soma = 0;
-let count = 0;
-let valor;
+        let entrada;
 
-while (true) {
-    valor = prompt("Insira um valor (ou 'sair' para encerrar):");
+while (entrada !== "sair") {
+    entrada = prompt("Digite um valor (ou 'sair' para encerrar):");
     
-    if (valor === "sair") break;
-    
-    soma += parseFloat(valor);
-    count++;
-    
-    console.log(`Soma atual: ${soma}`);
-    console.log(`Média atual: ${(soma / count).toFixed(2)}`);
+    if (entrada !== "sair") {
+        let valor = parseFloat(entrada);
+        
+        if (!isNaN(valor)) {
+            let resultado = valor * 2;
+            alert(`O valor ${valor} multiplicado por 2 é: ${resultado}`);
+        } else {
+            alert("Por favor, insira um número válido.");
+        }
+    }
 }
+
+alert("Operação encerrada. Obrigado por utilizar o sistema!");
     </script>
 </body>
 </html>
